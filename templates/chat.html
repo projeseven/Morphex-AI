@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morphex-AI - Sohbet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Morphex-AI</h2>
+                <button class="btn-logout" onclick="logout()">Çıkış</button>
+            </div>
+            
+            <div class="chat-modes">
+                <h3>Modlar</h3>
+                <button class="mode-btn active" onclick="switchMode('chat')">💬 Sohbet</button>
+                <button class="mode-btn" onclick="switchMode('code')">💻 Kod</button>
+                <button class="mode-btn" onclick="switchMode('question')">❓ Soru</button>
+            </div>
+        </aside>
+        
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <div class="chat-header">
+                <h1 id="modeTitle">Sohbet</h1>
+                <div class="chat-controls">
+                    <button class="btn-icon" onclick="toggleVoice()">🔊</button>
+                </div>
+            </div>
+            
+            <div id="chatMessages" class="chat-messages">
+                <div class="system-message">
+                    Hoş geldiniz! Morphex-AI ile sohbet etmeye başlayın.
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <textarea id="messageInput" placeholder="Mesajınızı yazın..." rows="3"></textarea>
+                <button id="sendBtn" class="btn btn-primary" onclick="sendMessage()">Gönder</button>
+                <button id="voiceBtn" class="btn btn-secondary" onclick="startVoiceInput()" title="Ses İnputu">🎤</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
