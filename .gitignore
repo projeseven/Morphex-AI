@@ -1,0 +1,9 @@
+.env
+*.pyc
+__pycache__/
+*.db
+venv/
+.vscode/
+.idea/
+*.mp3
+.DS_Store
